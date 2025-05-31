@@ -1,4 +1,4 @@
-
+/*
 import { ClerkProvider } from '@clerk/nextjs';
 import { Outfit } from 'next/font/google';
 import './globals.css';
@@ -23,6 +23,36 @@ export default function RootLayout({ children }) {
     </ClerkProvider>
   );
 }
+*/
+
+
+import { ClerkProvider } from '@clerk/nextjs';
+import { Outfit } from 'next/font/google';
+import './globals.css';
+import { Toaster } from "@/components/ui/sonner"
+import ChatWidget from './ChatWidget';  // import the client widget
+
+const outfit = Outfit({ subsets: ['latin'] });
+
+export const metadata = {
+  title: 'Moneymate',
+  description: 'Your one-stop solution to financial visualization',
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <ClerkProvider>
+      <html lang="en">
+        <body className={outfit.className}>
+          <Toaster />
+          {children}
+          <ChatWidget />  {/* inject chat globally */}
+        </body>
+      </html>
+    </ClerkProvider>
+  );
+}
+
 
 
 /*import {Inter, Outfit} from "next/font/google";

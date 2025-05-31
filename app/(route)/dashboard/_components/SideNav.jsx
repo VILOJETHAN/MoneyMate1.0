@@ -75,7 +75,7 @@ export default SideNav
 'use client'
 import React, { useEffect } from 'react'
 import Image from 'next/image'
-import { LayoutGrid, PiggyBank, ReceiptText, ShieldCheck } from 'lucide-react'
+import { ChartArea, ChartBar, LayoutGrid, MessageCircle, PiggyBank, ReceiptText, ShieldCheck } from 'lucide-react'
 import { UserButton } from '@clerk/nextjs'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
@@ -101,10 +101,16 @@ function SideNav() {
       path: '/dashboard/expenses',
     },
     {
-      id: 4,
-      name: 'Upgrade',
-      icons: ShieldCheck,
-      path: '/dashboard/upgrade',
+      id: 5,
+      name: 'Stocks',
+      icons: ChartArea,
+      path: '/dashboard/stocks',
+    },
+    {
+      id: 6,
+      name: 'AI-Chat',
+      icons: MessageCircle,
+      path: '/dashboard/chat',
     },
   ]
 
